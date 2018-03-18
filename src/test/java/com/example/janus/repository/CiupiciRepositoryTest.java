@@ -1,6 +1,7 @@
 package com.example.janus.repository;
 
 import com.example.janus.model.Ciupici;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,8 @@ class CiupiciRepositoryTest {
         assertThat(id, notNullValue());
     }
 
-    @Test
-    void findById() {
+    @RepeatedTest(5)
+    void findAll() {
+        ciupiciRepository.findAll();
     }
 }
