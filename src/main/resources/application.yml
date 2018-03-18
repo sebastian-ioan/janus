@@ -1,0 +1,35 @@
+server:
+  servlet:
+    path: /janus
+  port: 8888
+
+spring:
+  main:
+    web-application-type: servlet
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    hikari:
+      minimum-idle: 5
+      pool-name: MascaraPool
+      username: mascara
+      password: password
+    url: jdbc:oracle:thin:@localhost:1521:xe
+  jpa:
+
+    show-sql: true
+    database: oracle
+    hibernate:
+      ddl-auto: validate
+      use-new-id-generator-mappings: true
+    open-in-view: false
+    properties:
+      hibernate:
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+
+
+logging:
+  level:
+    ROOT: info
+    org.hibernate.sql: info
+    com.zaxxer.hikari: info
